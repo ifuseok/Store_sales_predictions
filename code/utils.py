@@ -10,13 +10,13 @@ class time_model:
         
     ### model grid search ###
     def auto_arimga_grid(self):
-        information = ['aic','bic','oob']
+        information = ['aic',"bic"]
         seasonal = [True,False]
         season_num = [2,4,12]
         #out_sample_table = {'1주':4,'2주':2,'3주':2,'4주':1}
         trend = ["c","t","ct"]
         Ds = [0,1]
-        ds = [0,1,2]
+        ds = [0,1]
         models = []
         for cre in information:
             for tr in trend:
@@ -34,7 +34,7 @@ class time_model:
                                                         start_Q=0,start_P=0,D=D,
                                                         max_Q=5,max_P=5,
                                                         information_criterion=cre,
-                                                        trend=tr,stepwise=True,trace=False,
+                                                        trend=tr,stepwise=True,trace=True,
                                                         error_action='ignore',
                                                         suppress_warnings=True)
                                     except:
