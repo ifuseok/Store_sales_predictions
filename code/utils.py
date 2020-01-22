@@ -34,7 +34,7 @@ class time_model:
                                                         start_Q=0,start_P=0,D=D,
                                                         max_Q=5,max_P=5,
                                                         information_criterion=cre,
-                                                        trend=tr,stepwise=True,trace=True,
+                                                        trend=tr,stepwise=True,trace=False,
                                                         error_action='ignore',
                                                         suppress_warnings=True)
                                     except:
